@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯 · 日常查询与对照</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #f9fafc;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1a1c1e;
+            line-height: 1.7;
+            padding: 2.4rem 1rem 3.5rem;
+        }
+        .page {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* 标题层级 —— 极简、留白大 */
+        h1 {
+            font-size: 2.6rem;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            color: #0b141c;
+            margin-bottom: 0.4rem;
+            line-height: 1.2;
+        }
+        .subhead {
+            font-size: 1rem;
+            color: #687076;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #e4e7ea;
+            padding-bottom: 1.2rem;
+        }
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 450;
+            margin: 2.8rem 0 0.8rem;
+            color: #1a2b3c;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 460;
+            margin: 1.5rem 0 0.4rem;
+            color: #2a3b4c;
+        }
+        p {
+            margin-bottom: 1.2rem;
+            color: #1f2937;
+        }
+        .intro {
+            font-size: 1.04rem;
+            margin-bottom: 2rem;
+        }
+
+        /* 卡片区 —— 干净无阴影，仅靠分隔与微底色 */
+        .highlight-group {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.8rem 1.8rem 1.2rem;
+            margin: 2.4rem 0;
+            border: 1px solid #e6e9ed;
+        }
+        .highlight-group ul {
+            list-style: none;
+            padding: 0;
+        }
+        .highlight-group li {
+            padding: 0.9rem 0 0.8rem;
+            border-bottom: 1px dashed #e1e5ea;
+        }
+        .highlight-group li:last-child {
+            border-bottom: none;
+        }
+        .highlight-group strong {
+            font-weight: 500;
+            color: #1f3a4f;
+            display: inline-block;
+            min-width: 5.5rem;
+        }
+
+        /* 场景小块 */
+        .scene-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 2rem 0 1.5rem;
+        }
+        .scene-item {
+            flex: 1 1 160px;
+            background: #f3f5f9;
+            border-radius: 18px;
+            padding: 1.2rem 1rem;
+            border: 1px solid #e6e9ed;
+        }
+        .scene-item h4 {
+            font-weight: 460;
+            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+            color: #1f3a4f;
+            letter-spacing: 0.01em;
+        }
+        .scene-item p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: #3b4b5c;
+        }
+
+        /* 提示 / faq 简缩 */
+        .note-box {
+            background: #f1f4f8;
+            border-radius: 20px;
+            padding: 1.2rem 1.6rem;
+            margin: 2.6rem 0 1.8rem;
+            border-left: 4px solid #b2c4d4;
+        }
+        .note-box p {
+            margin-bottom: 0.4rem;
+            font-size: 0.94rem;
+        }
+        .note-box .label {
+            font-weight: 450;
+            color: #1f3a4f;
+        }
+
+        /* 链接样式 */
+        a {
+            color: #1c5b8a;
+            text-decoration: none;
+            border-bottom: 1px solid #d0dce8;
+            transition: border-color 0.2s, color 0.2s;
+            font-weight: 400;
+        }
+        a:hover {
+            color: #0b3e62;
+            border-bottom-color: #1c5b8a;
+        }
+
+        /* 小字 & 脚注 */
+        .small-meta {
+            font-size: 0.85rem;
+            color: #6b798a;
+            margin-top: 3rem;
+            border-top: 1px solid #dfe3e8;
+            padding-top: 1.5rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e4e7ea;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 1.6rem 0.8rem; }
+            h1 { font-size: 2rem; }
+            .highlight-group { padding: 1.2rem; }
+            .scene-item { flex: 1 1 100%; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>世界杯</h1>
+    <div class="subhead">日常查询 · 对照 · 延伸阅读</div>
+
+    <p class="intro">
+        翻看赛程、对比小组数据、理顺历届脉络——很多时候我们需要的并不是即时比分，而是一个干净的查询节点。
+        <a href="https://app-m-fifa2026.com">世界杯</a>这个页面就是为这类场景准备的：它既不推送通知，也不靠弹窗抓取注意力。
+        只把信息整理好，等你需要的时候自己来翻。
+    </p>
+
+    <div class="highlight-group">
+        <h2 style="margin-top:0;">页面里有什么</h2>
+        <ul>
+            <li><strong>赛程结构</strong> — 按日期与阶段排列，方便纵向比对</li>
+            <li><strong>小组对照</strong> — 积分、净胜球、交锋记录，一列排开</li>
+            <li><strong>历史数据</strong> — 往届冠军、最佳射手、赛事进程简表</li>
+            <li><strong>延伸关联</strong> — 东道主信息、场馆位置、文化背景短文</li>
+        </ul>
+    </div>
+
+    <h2>几个细致用法</h2>
+    <div class="scene-grid">
+        <div class="scene-item">
+            <h4>周末前扫一遍</h4>
+            <p>周五晚打开页面，快速过一遍下一轮对阵，心里有个节奏，不用等推送。</p>
+        </div>
+        <div class="scene-item">
+            <h4>查一个小细节</h4>
+            <p>比如某支球队上一场进球队员，或者三个小组前的积分变化，不用翻社交网络。</p>
+        </div>
+        <div class="scene-item">
+            <h4>延伸阅读</h4>
+            <p>页面附带几段赛事笔记，适合赛前赛后随手翻，补充一点背景。</p>
+        </div>
+    </div>
+
+    <div class="note-box">
+        <p><span class="label">一点说明</span> —— 这个站点提供的是相对静态的赛事信息汇编，并非实时直播或即时数据面板。
+        数据更新频率为每个比赛日结束后同步一次，适合理性参考，不适合秒级追更。
+        如果你需要第一时间滚动信息，建议配合官方渠道使用。</p>
+    </div>
+
+    <h2>常见问题简摘</h2>
+    <p><strong>页面多久更新一次？</strong> 每个比赛日结束后数小时内完成同步。休赛日不变。</p>
+    <p><strong>手机上看方便吗？</strong> 窄版布局优先，不需要横屏或缩放，普通浏览器即可。</p>
+    <p><strong>数据来源可靠吗？</strong> 所有赛果与统计均取自公开赛事记录，页面本身不做二次推测或预测。</p>
+
+    <hr>
+
+    <p style="margin-bottom: 0.3rem;">
+        如果你想直接看看赛程怎么排的、球队之间历史战绩如何，这里是入口：
+        <a href="https://app-m-fifa2026.com">世界杯</a> —— 没有多余的跳转，也没有强制注册。
+    </p>
+
+    <div class="small-meta">
+        页面方向 · 日常查询与对照 ｜ 内容不定期整理
+    </div>
+
+    <!-- 隐性种子标识，无需展示 -->
+</div>
+</body>
+</html>
