@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界杯 · 2026 动态观察</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f3ed;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Serif SC', serif;
+      line-height: 1.65;
+      color: #2c281e;
+      padding: 0 1rem;
+    }
+
+    .page {
+      max-width: 880px;
+      margin: 2.4rem auto;
+      padding: 2.2rem 2.4rem;
+      background: #fffcf8;
+      border-radius: 28px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+    }
+
+    /* hero */
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      border-left: 6px solid #c99f6b;
+      padding-left: 1.2rem;
+      margin-bottom: 1rem;
+      color: #2f271b;
+    }
+
+    .hero .sub {
+      font-size: 1.12rem;
+      color: #5f5340;
+      margin-bottom: 1.6rem;
+      padding-right: 2rem;
+    }
+
+    .hero .sub a {
+      color: #8b6f4a;
+      text-decoration: none;
+      border-bottom: 1px solid #d9caba;
+      font-weight: 500;
+      transition: border 0.2s;
+    }
+
+    .hero .sub a:hover {
+      border-bottom: 2px solid #a5825b;
+    }
+
+    /* 引用块 / 提示框 */
+    .inset-box {
+      background: #f2ede4;
+      border-radius: 20px;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0 1.8rem 0;
+      border-left: 4px solid #b5946d;
+      font-size: 1rem;
+    }
+
+    .inset-box strong {
+      color: #4d3e2c;
+      font-weight: 600;
+    }
+
+    .inset-box .tag {
+      display: inline-block;
+      background: #d9c9b4;
+      color: #2b241b;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      padding: 0.2rem 0.9rem;
+      border-radius: 40px;
+      margin-right: 0.5rem;
+    }
+
+    /* 优势网格 */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem 2rem;
+      margin: 2rem 0 2.2rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 1.5rem 1.6rem 1.6rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      border: 1px solid #ece5db;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      color: #332e24;
+      border-bottom: 1px dashed #e0d5c7;
+      padding-bottom: 0.3rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #4b4234;
+    }
+
+    /* 说明区域 —— 文章风格 */
+    .explain {
+      margin: 2rem 0 1.5rem;
+    }
+
+    .explain h2 {
+      font-size: 1.7rem;
+      font-weight: 450;
+      margin-bottom: 0.8rem;
+      color: #2b241b;
+    }
+
+    .explain p {
+      margin-bottom: 0.9rem;
+      text-align: justify;
+    }
+
+    .explain .footnote {
+      font-size: 0.9rem;
+      color: #6b5f4d;
+      background: #f3efe8;
+      padding: 0.8rem 1.4rem;
+      border-radius: 60px;
+      display: inline-block;
+      margin-top: 0.4rem;
+    }
+
+    /* FAQ 摘要 */
+    .faq-mini {
+      border-top: 1px solid #e0d6c9;
+      padding-top: 1.8rem;
+      margin: 2rem 0 1.2rem;
+    }
+
+    .faq-mini h4 {
+      font-size: 1.0rem;
+      font-weight: 600;
+      color: #4b3f2f;
+      margin-bottom: 1rem;
+      letter-spacing: 0.3px;
+    }
+
+    .faq-item {
+      padding: 0.5rem 0 0.6rem;
+      border-bottom: 1px solid #ece3d8;
+    }
+
+    .faq-item:last-of-type {
+      border-bottom: none;
+    }
+
+    .faq-item q {
+      font-style: normal;
+      font-weight: 500;
+      color: #2f281d;
+    }
+
+    .faq-item .ans {
+      display: block;
+      margin-top: 0.2rem;
+      font-size: 0.92rem;
+      color: #534c3e;
+    }
+
+    /* 底部链接 */
+    .footer-note {
+      margin-top: 2.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #dbd0c1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #6f6556;
+    }
+
+    .footer-note a {
+      color: #7b684d;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .footer-note a:hover {
+      border-bottom: 1px solid #a28361;
+    }
+
+    .footer-note .ref {
+      background: #ede6db;
+      padding: 0.2rem 1rem;
+      border-radius: 60px;
+      font-size: 0.8rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 680px) {
+      .page {
+        padding: 1.6rem 1.2rem;
+        margin: 1.2rem auto;
+      }
+
+      .hero h1 {
+        font-size: 2.1rem;
+        padding-left: 0.8rem;
+      }
+
+      .grid-2col {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .card {
+        padding: 1.2rem;
+      }
+
+      .inset-box {
+        padding: 1rem 1.2rem;
+      }
+
+      .hero .sub {
+        font-size: 1rem;
+      }
+
+      .footer-note {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- hero -->
+  <div class="hero">
+    <h1>2026 · 世界杯视野</h1>
+    <div class="sub">
+      从赛事架构到观赛逻辑，围绕 <a href="https://app-official-fifa2026.com">世界杯</a> 展开的信息聚合与功能解读。这不是一个简单的入口，而是理解赛事生态的辅助界面。
+    </div>
+  </div>
+
+  <!-- 提示框 / 引用块 -->
+  <div class="inset-box">
+    <span class="tag">定位</span>
+    <strong>信息密度优先</strong> —— 本页面不追逐即时比分或流言，而是梳理赛制、场馆、代表队构成等结构性内容。所有引用均指向官方公开资料，<a href="https://app-official-fifa2026.com" style="color:#7b5f3e; text-decoration:underline; text-underline-offset:3px;">世界杯</a>相关数据以权威渠道为准。
+  </div>
+
+  <!-- 优势区：两列卡片 -->
+  <div class="grid-2col">
+    <div class="card">
+      <h3>48 队 · 新赛制</h3>
+      <p>决赛圈扩军至 48 支，小组赛阶段分为 12 组，每组 4 队。出线规则与淘汰赛对阵逻辑均有调整，了解结构有助于把握赛事节奏。</p>
+    </div>
+    <div class="card">
+      <h3>跨域联合举办</h3>
+      <p>2026 年由美国、加拿大、墨西哥联合承办，16 个承办城市横跨北美洲。时区、场地海拔、气候差异成为赛程分析的新变量。</p>
+    </div>
+    <div class="card">
+      <h3>数字观赛整合</h3>
+      <p>赛事官方数字服务整合票务、场馆指引与实时数据。通过 <a href="https://app-official-fifa2026.com" style="color:#6b5c47; text-decoration:underline; text-underline-offset:2px;">世界杯</a> 数字平台可获取授权信息流，减少信息噪音。</p>
+    </div>
+    <div class="card">
+      <h3>历史数据对照</h3>
+      <p>历届冠军、进球分布、主办国表现等维度均提供可对比的统计框架。适合需要深度内容而非碎片推送的阅读者。</p>
+    </div>
+  </div>
+
+  <!-- 说明区：文章段落 -->
+  <div class="explain">
+    <h2>从扩军到生态</h2>
+    <p>2026 年 <a href="https://app-official-fifa2026.com" style="color:#7b643c; text-decoration:underline; text-underline-offset:2px;">世界杯</a> 的规模变化不仅是数字翻倍，更意味着预选赛路线、洲际名额分配以及小组赛出线逻辑的重构。对于长期关注足球体系的用户来说，理解席位分布（亚洲 8.5、非洲 9.5、欧洲 16 等）比单纯关注热门球队更具建设性。</p>
+    <p>与此同时，北美洲的跨时区办赛带来独特的转播窗口——东岸、西岸与中部时间交织，对习惯单一时间线的观众形成新的规划需求。本次赛事的技术辅助系统（包括门线技术、半自动越位判定）将沿用并升级，但规则层面的微小调整（如补时标准）同样值得纳入赛前知识储备。</p>
+    <div class="footnote">注：以上信息基于 FIFA 理事会已公布的赛历与竞赛规程，具体细节以最终发布为准。</div>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-mini">
+    <h4>常见疑问 · 摘要</h4>
+    <div class="faq-item">
+      <q>2026 世界杯决赛圈何时开始？</q>
+      <span class="ans">开幕战预计 2026 年 6 月 11 日，决赛于 7 月 19 日举行。具体赛程由 FIFA 在赛前一年公布。</span>
+    </div>
+    <div class="faq-item">
+      <q>如何获取官方票务信息？</q>
+      <span class="ans">票务销售由 FIFA 独家管理，第一轮抽签通常于赛前 12–18 个月开放申请。通过 <a href="https://app-official-fifa2026.com" style="color:#665a49; text-decoration:underline; text-underline-offset:2px;">世界杯</a> 官方应用可跟踪销售阶段与中签状态。</span>
+    </div>
+    <div class="faq-item">
+      <q>48 队赛制下小组第三能否出线？</q>
+      <span class="ans">不能。12 个小组前两名晋级 32 强淘汰赛，没有小组第三名出线通道。小组排名规则与以往一致：积分、净胜球、进球数、相互战绩。</span>
+    </div>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="footer-note">
+    <span>内容基于公开资料整理 · 非官方页面</span>
+    <span class="ref"><a href="https://app-official-fifa2026.com">世界杯</a> · 数字服务索引</span>
+  </div>
+</div>
+</body>
+</html>
