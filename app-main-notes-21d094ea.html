@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯 – 持续关注 · 再次访问</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #eceef2;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e2229;
+            line-height: 1.6;
+            padding: 2.5rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        /* hero 头部 —— 轻量、留白、克制 */
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 1rem 1.5rem;
+            background: transparent;
+        }
+
+        .hero h1 {
+            font-weight: 500;
+            font-size: 2.2rem;
+            letter-spacing: 0.02em;
+            color: #1c2a3f;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #5c6570;
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        .hero .sub span {
+            background: #e2e6ec;
+            padding: 0.1rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #3f4a59;
+        }
+
+        /* 卡片系统 —— 浅灰底、细边框、柔和阴影 */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        .card {
+            background: #f8fafc;
+            border: 1px solid #dce1e8;
+            border-radius: 24px;
+            padding: 1.8rem 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s ease, border-color 0.15s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            border-color: #c8cfd9;
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #1a2633;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e2e7ee;
+        }
+
+        .card p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: #2d3745;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-list {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .highlight-list li {
+            margin-bottom: 0.6rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .highlight-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0.2rem;
+            color: #788697;
+            font-weight: bold;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e9edf3;
+            border-radius: 30px;
+            padding: 0.2rem 1rem;
+            font-size: 0.85rem;
+            color: #2d3d52;
+            margin-right: 0.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            border: 1px solid #b3bfcc;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #1d2b3a;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: #eef2f7;
+            border-color: #8d9bae;
+        }
+
+        .faq-item {
+            margin-bottom: 1.1rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #1b293b;
+            margin-bottom: 0.15rem;
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: #3d4c5e;
+        }
+
+        .inline-link {
+            color: #1e4a7a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #b1c1d4;
+            transition: 0.15s;
+        }
+
+        .inline-link:hover {
+            border-bottom: 1px solid #1e4a7a;
+            color: #0b2b4a;
+        }
+
+        .access-note {
+            background: #f3f6fb;
+            border-left: 3px solid #7d95b0;
+            padding: 1rem 1.5rem;
+            border-radius: 16px;
+            margin: 1.2rem 0 0;
+            font-size: 0.95rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            body {
+                padding: 1.5rem 0.75rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                padding: 1.5rem 1.2rem;
+                border-radius: 20px;
+            }
+
+            .card h2 {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .card {
+                padding: 1.2rem 1rem;
+            }
+        }
+
+        /* 间距微调 */
+        .mt-1 {
+            margin-top: 0.5rem;
+        }
+        .mt-2 {
+            margin-top: 1rem;
+        }
+        .text-small {
+            font-size: 0.9rem;
+            color: #5f6e7e;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero 区域：再次访问 / 收藏 / 关注 -->
+    <header class="hero">
+        <h1>世界杯 · 赛场以外</h1>
+        <p class="sub">
+            为持续关注赛事信息而整理的说明页&ensp;&ensp;<span>收藏 · 回访</span>
+        </p>
+    </header>
+
+    <!-- 卡片内容区：产品说明式，段落承接 -->
+    <div class="card-grid">
+
+        <!-- 摘要：回访与收藏的出发点 -->
+        <section class="card">
+            <h2>从关注到再次访问</h2>
+            <p>
+                对许多爱好者而言，<strong>世界杯</strong>不只是一段赛程，更是一种长期的信息线索。
+                无论是赛历更新、球队动态，还是过往数据的回顾，一个稳定、轻量的信息节点往往比社交推送更可靠。
+                正因如此，我们通常会把某个聚合页面加入书签，并在不同阶段重新打开它。
+            </p>
+            <p>
+                如果你曾浏览过 <a href="https://app-main-fifa2026.com" class="inline-link">世界杯</a> 相关信息页面，
+                或许会发现，页面的结构倾向于“信息梳理”而非“即时新闻”。这种设计更适合反复阅读和模块化查找，
+                也是许多深度关注者选择将其加入收藏夹的原因之一。
+            </p>
+            <p class="text-small">
+                · 收藏的意义不在于一次访问，而在于需要时能快速定位。
+            </p>
+        </section>
+
+        <!-- 亮点：结构、层次、克制更新 -->
+        <section class="card">
+            <h2>亮点 &amp; 信息组织</h2>
+            <p>
+                页面的信息组织遵循了「可再访」逻辑，主要体现在三个方面：
+            </p>
+            <ul class="highlight-list">
+                <li><strong>分区独立</strong> – 每个主题区块设有清晰标题与边界，便于在收藏后快速定位到感兴趣的部分，不必从头浏览。</li>
+                <li><strong>克制更新</strong> – 内容侧重长期有效的背景信息与赛事框架，减少频繁变动带来的“链接疲劳”。</li>
+                <li><strong>低噪阅读</strong> – 页面以浅灰背景、细边框卡片呈现，视觉上避免过度刺激，适合持续关注场景。</li>
+            </ul>
+            <p>
+                这种模式源于一个观察：当用户选择把某个页面加入书签，往往不是因为它“最新”，而是因为它“可靠”。
+                尤其在围绕世界杯的信息生态里，经过梳理的内容往往比碎片推送更具留存价值。
+            </p>
+            <div class="mt-1">
+                <span class="tag">收藏友好</span>
+                <span class="tag">模块结构</span>
+                <span class="tag">低干扰</span>
+            </div>
+        </section>
+
+        <!-- 使用建议：如何利用这个页面 -->
+        <section class="card">
+            <h2>使用建议 · 持续关注</h2>
+            <p>
+                如果你正在寻找一个可以定期回访的世界杯信息锚点，建议采取以下方式：
+            </p>
+            <ul class="highlight-list">
+                <li><strong>加入书签或添加到主屏幕</strong> – 将页面保存至浏览器书签栏，或使用移动端“添加到主屏幕”功能，方便后续直接打开。</li>
+                <li><strong>按需查看特定模块</strong> – 页面内容按主题切分，无需每次全部阅读，可直接跳到感兴趣的区域。</li>
+                <li><strong>搭配RSS或邮件提醒</strong> – 若页面日后开放更新日志或变动通知，可考虑订阅轻量提醒，减少主动检查的频率。</li>
+            </ul>
+            <p>
+                保持关注不等于频繁刷新。一个经过整理的信息节点，配合合理的回访节奏，能够在不增加认知负担的前提下，
+                让你始终与世界杯的动态保持连接。你随时可以通过浏览器访问 <a href="https://app-main-fifa2026.com" class="inline-link">世界杯</a> 页面，确认内容是否有所补充。
+            </p>
+        </section>
+
+        <!-- 可信但克制的访问说明 + FAQ 摘要 -->
+        <section class="card">
+            <h2>关于访问与预期</h2>
+            <div class="access-note">
+                <strong>说明</strong>：本页指向的资源为公开信息页面，不涉及任何账户注册、付费功能或隐私收集。
+                页面内容基于赛事公共信息整理，不提供实时比分、博彩引导或未经核实的预测。
+                访问前建议确保网络环境稳定，部分资源可能因地区或运营商差异而加载速度不同。
+            </div>
+
+            <div class="mt-2">
+                <div class="faq-item">
+                    <strong>FAQ 摘要</strong>
+                </div>
+                <div class="faq-item">
+                    <strong>页面会不会频繁变化？</strong>
+                    <p>设计上倾向于阶段性更新（例如赛程阶段、赛事节点），不会每日无规律变动，适合周期性回访。</p>
+                </div>
+                <div class="faq-item">
+                    <strong>内容来源可靠吗？</strong>
+                    <p>页面引用的信息基于公开赛事资料与整理，不依赖单一第三方，但仍建议交叉核对关键日程。</p>
+                </div>
+                <div class="faq-item">
+                    <strong>我该如何再次找到它？</strong>
+                    <p>使用书签/收藏功能，或通过历史记录中带有 <a href="https://app-main-fifa2026.com" class="inline-link">世界杯</a> 关键词的页面回溯即可。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 一个轻量收束 -->
+        <div style="text-align: center; padding: 1.5rem 0 0.5rem; color: #6c7b8d; font-size: 0.9rem; border-top: 1px solid #dce2ea; margin-top: 0.5rem;">
+            信息聚合 · 持续关注 · 理性回访
+        </div>
+
+    </div><!-- end card-grid -->
+
+</div><!-- end page -->
+</body>
+</html>
