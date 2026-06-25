@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯 · 2026 年赛事信息页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fafaf8;
+            color: #2c2b28;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 5rem 0 2.5rem 0;
+            border-bottom: 1px solid #eae7e2;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+            color: #1a1a18;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 580px;
+            color: #5b5a57;
+        }
+
+        .hero p + p {
+            margin-top: 0.75rem;
+        }
+
+        /* 通用 section */
+        section {
+            padding: 3.5rem 0;
+            border-bottom: 1px solid #eae7e2;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.5rem;
+            color: #1f1e1b;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #2c2b28;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: #3e3d3a;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        .lead {
+            font-size: 1.05rem;
+        }
+
+        /* 优势区 —— 卡片极简 */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .card {
+            flex: 1 1 200px;
+            background: #ffffff;
+            padding: 1.5rem 1.25rem;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.04);
+            border: 1px solid #efede9;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.65rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            color: #545350;
+        }
+
+        /* 说明区 */
+        .explain-block {
+            background: #ffffff;
+            padding: 2rem 2rem 1.75rem 2rem;
+            border-radius: 14px;
+            border: 1px solid #efede9;
+        }
+
+        .explain-block p {
+            font-size: 1rem;
+        }
+
+        /* FAQ 摘要 */
+        .faq-list {
+            margin-top: 0.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eae7e2;
+            padding-bottom: 1.2rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-weight: 500;
+            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
+            color: #2c2b28;
+        }
+
+        .faq-answer {
+            color: #545350;
+            font-size: 0.95rem;
+        }
+
+        /* 底部链接 */
+        .footer-note {
+            padding: 2.5rem 0 3.5rem 0;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #6f6e6a;
+            border-top: 1px solid #eae7e2;
+        }
+
+        .footer-note a {
+            color: #2c2b28;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #cbc8c2;
+        }
+
+        .footer-note a:hover {
+            text-decoration-color: #2c2b28;
+        }
+
+        a {
+            color: #2c2b28;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #cfccc6;
+            transition: text-decoration-color 0.2s;
+        }
+
+        a:hover {
+            text-decoration-color: #2c2b28;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 1.25rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero {
+                padding: 3.5rem 0 2rem 0;
+            }
+            section {
+                padding: 2.5rem 0;
+            }
+            .card {
+                flex: 1 1 100%;
+            }
+            .explain-block {
+                padding: 1.5rem 1.25rem 1.25rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Hero 区 -->
+        <header class="hero">
+            <h1>2026 年世界杯</h1>
+            <p>四年一次的盛会，即将跨越北美洲三片土地。从小组赛到决赛，赛程、场馆与球队故事都在缓缓展开。</p>
+            <p>这不是一个简单的赛事页面，而是一处聚合信息与视角的微站，帮助你在纷繁的新闻里找到真正需要的片段。</p>
+        </header>
+
+        <!-- 优势区：为什么关注这里 -->
+        <section>
+            <h2>在这里可以找到什么</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>赛程与场馆</h3>
+                    <p>2026 年世界杯将在美国、加拿大、墨西哥的多座城市举行。比赛日期、开球时间与场馆容量，信息持续更新。</p>
+                </div>
+                <div class="card">
+                    <h3>球队与分组</h3>
+                    <p>48 支球队的晋级路径、历史交锋、预选赛表现——基础数据与背景梳理，方便快速回顾。</p>
+                </div>
+                <div class="card">
+                    <h3>看点与记录</h3>
+                    <p>哪些球员可能迎来最后一届世界杯？哪些新生代将首次亮相？赛事之外的叙事同样值得留意。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 说明区：关于这个信息页 -->
+        <section>
+            <h2>这个页面是什么</h2>
+            <div class="explain-block">
+                <p>这是一个围绕 2026 年世界杯搭建的信息聚合页，不属于任何官方机构。内容来自公开报道、赛事日历与统计资料，经过筛选与整理，以相对克制的篇幅呈现。</p>
+                <p>你可以把它看作一张便签——上面记录了赛事的基本骨架，也留出了你自己去发现细节的空间。每一条信息都附有源文件或可追溯的链接，不渲染情绪，不制造焦虑。</p>
+                <p>如果你需要更完整的赛事中枢（包括互动赛程、球队数据库、购票指引等），可以访问主站 <a href="https://app-hub-fifa2026.com">世界杯</a>，那里有更丰富的工具和深度内容。</p>
+            </div>
+        </section>
+
+        <!-- FAQ 摘要 -->
+        <section>
+            <h2>常见疑问摘要</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">2026 年世界杯何时开始？</div>
+                    <div class="faq-answer">比赛计划于 2026 年 6 月至 7 月举行，具体揭幕战日期有待官方最终确认，目前预计在六月中旬。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">哪些城市将承办比赛？</div>
+                    <div class="faq-answer">共有 16 个主办城市，包括洛杉矶、纽约/新泽西、达拉斯、墨西哥城、多伦多、温哥华等，完整列表可在主站查阅。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">48 支球队如何分组？</div>
+                    <div class="faq-answer">新赛制下，48 支球队将分为 12 个小组，每组 4 队。小组前两名与 8 个成绩最好的小组第三名晋级 32 强淘汰赛。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 底部链接 -->
+        <div class="footer-note">
+            <p>若想深入了解赛事数据、互动地图与最新动态，可以前往 <a href="https://app-hub-fifa2026.com">世界杯</a> 专题站。信息仅供参考，具体以官方发布为准。</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
